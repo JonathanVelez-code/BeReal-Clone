@@ -2,10 +2,11 @@
 //  AppDelegate.swift
 //  BeReal Clone
 //
-//  Created by Willie Velez on 2/26/23.
+//  Created by Jonathan Velez on 2/26/23.
 //
 
 import UIKit
+import ParseSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        ParseSwift.initialize(applicationId: "ggIuGTnCOjsISvTgKIW3NMO1IW7hR7DzI0hd2e0G",
+                              clientKey: "pKOUxOLsGNe7Zoq832KAs6N78Yk0dqYcaewGd2ZX",
+                              serverURL: URL(string: "https://parseapi.back4app.com")!)
         return true
     }
 
