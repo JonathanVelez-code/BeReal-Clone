@@ -17,6 +17,7 @@ struct User: ParseUser {
     var updatedAt: Date?
     var ACL: ParseACL?
     var originalData: Data?
+    var lastPostedDate: Date?
 
     // These are required by `ParseUser`.
     var username: String?
@@ -26,5 +27,5 @@ struct User: ParseUser {
     var authData: [String: [String: String]?]?
 
     // Your custom properties.
-    // var customKey: String?
+    //var customKey: String?
 }

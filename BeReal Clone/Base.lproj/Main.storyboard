@@ -237,6 +237,14 @@
                                                                 <constraint firstAttribute="width" secondItem="Iy3-rI-ba6" secondAttribute="height" multiplier="1:1" id="6Si-ab-Tir"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-ZY-kFk">
+                                                            <rect key="frame" x="0.0" y="425.33333333333331" width="393" height="0.0"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EVn-Gr-arQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </view>
+                                                            <blurEffect style="regular"/>
+                                                        </visualEffectView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Fg-U5-Ejz">
                                                             <rect key="frame" x="0.0" y="429.33333333333331" width="393" height="75.666666666666686"/>
                                                             <subviews>
@@ -258,6 +266,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray2Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="p32-WC-kUN" secondAttribute="trailing" priority="999" id="FQI-sY-eYD"/>
                                                 <constraint firstItem="p32-WC-kUN" firstAttribute="leading" secondItem="mD4-qE-dBT" secondAttribute="leading" id="b1a-Ug-izl"/>
@@ -266,6 +275,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="blurView" destination="P6o-ZY-kFk" id="ZHd-fa-TX0"/>
                                             <outlet property="captionLabel" destination="RaP-2t-450" id="xq3-57-zbR"/>
                                             <outlet property="dateLabel" destination="i2I-AL-deu" id="zxu-iX-OZx"/>
                                             <outlet property="postImageView" destination="Iy3-rI-ba6" id="wpJ-E7-4zo"/>
@@ -286,6 +296,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="BeReal" id="S5Q-A5-jAc" userLabel="BeReal">
                         <barButtonItem key="backBarButtonItem" title=" " id="YkY-Wy-5fM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="U7m-B8-i1y">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="onLogOutTapped:" destination="wt1-FY-sqD" id="8Iz-tO-erU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus.app" catalog="system" id="RJl-Ot-Vdq">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -344,17 +360,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SCe-j6-yaI">
-                        <barButtonItem key="rightBarButtonItem" id="KGn-vq-NkS">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RTQ-Gy-2dV">
-                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Share"/>
+                        <rightBarButtonItems>
+                            <barButtonItem id="KGn-vq-NkS">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RTQ-Gy-2dV">
+                                    <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="gray" title="Share"/>
+                                    <connections>
+                                        <action selector="onShareTapped:" destination="V9Z-ne-EK0" eventType="touchUpInside" id="YXW-vW-npd"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem image="camera" catalog="system" id="DRt-jU-J2Y">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="onShareTapped:" destination="V9Z-ne-EK0" eventType="touchUpInside" id="YXW-vW-npd"/>
+                                    <action selector="onTakePhotoTapped:" destination="V9Z-ne-EK0" id="SqZ-ZW-3Zc"/>
                                 </connections>
-                            </button>
-                        </barButtonItem>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="captionTextField" destination="y0m-uX-PBb" id="R8V-HZ-Uv1"/>
@@ -368,6 +392,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
