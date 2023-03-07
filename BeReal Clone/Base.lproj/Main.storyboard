@@ -230,21 +230,35 @@
                                                             </subviews>
                                                             <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iy3-rI-ba6">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWy-s9-iBh">
                                                             <rect key="frame" x="0.0" y="28.333333333333343" width="393" height="393"/>
-                                                            <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Soc-uL-uhs">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                                    <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                                </imageView>
+                                                                <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-G4-b2V">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ofl-dV-zPv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <blurEffect style="regular"/>
+                                                                </visualEffectView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="Iy3-rI-ba6" secondAttribute="height" multiplier="1:1" id="6Si-ab-Tir"/>
+                                                                <constraint firstAttribute="bottom" secondItem="GGx-G4-b2V" secondAttribute="bottom" id="97y-zY-cQL"/>
+                                                                <constraint firstItem="GGx-G4-b2V" firstAttribute="top" secondItem="hWy-s9-iBh" secondAttribute="top" id="J87-Uk-aSs"/>
+                                                                <constraint firstAttribute="trailing" secondItem="GGx-G4-b2V" secondAttribute="trailing" id="YAL-iY-mzb"/>
+                                                                <constraint firstItem="GGx-G4-b2V" firstAttribute="leading" secondItem="hWy-s9-iBh" secondAttribute="leading" id="dIS-mC-1CN"/>
+                                                                <constraint firstItem="Soc-uL-uhs" firstAttribute="top" secondItem="hWy-s9-iBh" secondAttribute="top" id="it6-HT-KNZ"/>
+                                                                <constraint firstAttribute="width" secondItem="hWy-s9-iBh" secondAttribute="height" multiplier="1:1" id="mfh-OD-oSr"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Soc-uL-uhs" secondAttribute="bottom" id="osC-pV-7ke"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Soc-uL-uhs" secondAttribute="trailing" id="thu-wt-o8d"/>
+                                                                <constraint firstItem="Soc-uL-uhs" firstAttribute="leading" secondItem="hWy-s9-iBh" secondAttribute="leading" id="w7N-9N-2lt"/>
                                                             </constraints>
-                                                        </imageView>
-                                                        <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-ZY-kFk">
-                                                            <rect key="frame" x="0.0" y="425.33333333333331" width="393" height="0.0"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EVn-Gr-arQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            </view>
-                                                            <blurEffect style="regular"/>
-                                                        </visualEffectView>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Fg-U5-Ejz">
                                                             <rect key="frame" x="0.0" y="429.33333333333331" width="393" height="75.666666666666686"/>
                                                             <subviews>
@@ -264,6 +278,9 @@
                                                             <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="0.0" right="16"/>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="hWy-s9-iBh" firstAttribute="width" secondItem="hWy-s9-iBh" secondAttribute="height" multiplier="1:1" id="8tp-CS-8bh"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -275,10 +292,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="blurView" destination="P6o-ZY-kFk" id="ZHd-fa-TX0"/>
+                                            <outlet property="blurView" destination="GGx-G4-b2V" id="eTA-Th-0t1"/>
                                             <outlet property="captionLabel" destination="RaP-2t-450" id="xq3-57-zbR"/>
                                             <outlet property="dateLabel" destination="i2I-AL-deu" id="zxu-iX-OZx"/>
-                                            <outlet property="postImageView" destination="Iy3-rI-ba6" id="wpJ-E7-4zo"/>
+                                            <outlet property="postImageView" destination="Soc-uL-uhs" id="jLO-Vt-WBc"/>
                                             <outlet property="usernameLabel" destination="zLP-FC-fTs" id="res-fv-wDH"/>
                                         </connections>
                                     </tableViewCell>
@@ -315,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDY-tx-LOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="648"/>
+            <point key="canvasLocation" x="43.511450381679388" y="647.18309859154931"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="6Pc-7E-zSq">
@@ -402,6 +419,9 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -16,6 +16,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    
     @IBOutlet weak var blurView: UIVisualEffectView!
     
     private var imageDataRequest: DataRequest?
