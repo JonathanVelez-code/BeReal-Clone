@@ -1,5 +1,5 @@
 # Project 6 - BeReal Pt. 2
-https://imgur.com/GiJ9EQ1.gif
+
 Submitted by: Jonathan Velez
 
 BeReal Clone is an app that users post a photo of what they’re currently doing upon receiving a random notification during the day. Only after posting a photo can the user see their friends’ photos.
@@ -29,7 +29,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 
-https://user-images.githubusercontent.com/55106987/223611548-e96bfcc5-3298-407b-b129-32307c0cbaa7.mov
+![app](https://user-images.githubusercontent.com/55106987/223615050-72480576-7c0a-4c9a-b2ce-5ecbdc0a4fee.gif)
 
 
 <!-- Replace this with whatever GIF tool you used! -->
